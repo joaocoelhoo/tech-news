@@ -1,12 +1,13 @@
 import requests
 import time
 from parsel import Selector
+from tech_news.database import create_news
 
 
 def fetch(url):
     try:
         time.sleep(1)
-        response = requests.get("https://www.betrybe.com/",
+        response = requests.get(url,
                                 timeout=3,
                                 headers={"user-agent": "Fake user-agent"})
         response.raise_for_status()
@@ -47,7 +48,7 @@ def scrape_noticia(html_content):
         "div.entry-content > p:first-of-type *::text").getall()
     tags = selector.css("section.post-tags a::text").getall()
     category = selector.css("div.meta-category span.label::text").get()
-    print(category)
+
     return {
         "url": url,
         "title": title.strip(),
@@ -62,4 +63,20 @@ def scrape_noticia(html_content):
 
 # Requisito 5
 def get_tech_news(amount):
-    """Seu código deve vir aqui"""
+    url = "https://blog.betrybe.com/"
+    list_news_url = []
+    list_content = []
+    while len(list_news_url) < amount:
+        html_content = fetch(url)
+        list_of_links = scrape_novidades(html_content)
+        list_news_url.extend(list_of_links)
+        url = scrape_next_page_link(html_content)
+
+    for news_url in list_news_url[0:amount]:
+        html_content = fetch(news_url)
+        content = scrape_noticia(html_content)
+        list_content.append(content)
+
+    create_news(list_content)
+
+    return list_content
