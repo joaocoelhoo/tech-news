@@ -1,13 +1,34 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Projeto Tech News
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+# Descrição
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+O principal propósito desse projeto é realizar pesquisas em notícias relacionadas à tecnologia.
+
+As notícias podem ser obtidas através da raspagem do [Trybe](https://blog.betrybe.com/).
+
+# Tecnologia Utilizada
+
+ • Python
+
+# Instalando Dependências
+
+- Clone o repositório e
+use o comando: ```git clone git@github.com:joaocoelhoo/tech_news.git```
+
+- Entre na pasta do repositório que você acabou de clonar:
+```cd tech_news```
+
+- Crie o ambiente virtual para o projeto
+```python3 -m venv .venv && source .venv/bin/activate```
+
+- Instale as dependências
+```python3 -m pip install -r dev-requirements.txt```
+
+# Arquivos
+
+- Desenvolvidos por mim: toda pasta ```tech_news```
+
+- Os demais arquivos foram desenvolvidos pela trybe.
+
+# Contato
+João Coelho - [LinkedIn](https://www.linkedin.com/in/jcoelhoo/) - joaopaulomelocoelho@gmail.com
